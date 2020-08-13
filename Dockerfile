@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:edge
 
 COPY . /docker-rust-ci-base
 WORKDIR  /docker-rust-ci-base
