@@ -1,19 +1,15 @@
-FROM alpine:edge
+FROM ubuntu:latest
 
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+    build-essential \
+    ca-certificates \
+    curl \
+    libclang-dev \
+    && curl https://sh.rustup.rs -sSf | sh -s -- -y --profile minimal
+
+ENV PATH="/root/.cargo/bin:${PATH}"
 COPY . /docker-rust-ci-base
 WORKDIR  /docker-rust-ci-base
-
-RUN apk add --no-cache gcc \
-    build-base \
-    clang \
-    clang-dev \
-    clang-libs \
-    cmake \
-    linux-headers \
-    llvm-dev \
-    musl-dev \
-    openssl-dev \
-    rust \
-    cargo
 
 RUN cargo build --release
