@@ -5,7 +5,7 @@ RUN apt-get update \
     build-essential \
     ca-certificates \
     curl \
-    libclang-dev \
+    libssl-dev \
     && curl https://sh.rustup.rs -sSf | sh -s -- -y --profile minimal
 
 ENV PATH="/root/.cargo/bin:${PATH}"
