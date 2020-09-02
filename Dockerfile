@@ -6,7 +6,7 @@ RUN apt-get update \
     ca-certificates \
     curl \
     libssl-dev \
-    && curl https://sh.rustup.rs -sSf | sh -s -- -y --profile minimal
+    curl https://sh.rustup.rs -sSf | sh -s -- -y --profile minimal --default-toolchain 1.45.2
 
 ENV PATH="/root/.cargo/bin:${PATH}"
 COPY . /docker-rust-ci-base
