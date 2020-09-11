@@ -17,7 +17,7 @@ chrono = { version = "0.4", features = ["serde"] }
 envy = "0.4"
 fnv = "1.0"
 hex-serde = "0.1"
-indexmap = { version = "1.5", features = ["rayon"] }
+indexmap = { version = "1.6", features = ["rayon"] }
 mongodb = "1.1"
 once_cell = "1.4"
 opentelemetry = "0.8"
